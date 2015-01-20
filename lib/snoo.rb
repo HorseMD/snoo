@@ -1,7 +1,7 @@
 require 'httparty'
 require 'nokogiri'
 
-%w{version exceptions utilities account flair links_comments listings moderation pms subreddits users}.each do |local|
+%w{version exceptions utilities account flair links_comments listings moderation pms subreddits users wiki}.each do |local|
   require "snoo/#{local}"
 end
 # Snoo reddit API wrapper
@@ -13,7 +13,7 @@ module Snoo
   # @author (see Snoo)
   class Client
     include HTTParty
-    [Account, Flair, LinksComments, Listings, Moderation, PM, Utilities, User, Subreddit].each do |inc|
+    [Account, Flair, LinksComments, Listings, Moderation, PM, Utilities, User, Subreddit, Wiki].each do |inc|
       include inc
     end
 
